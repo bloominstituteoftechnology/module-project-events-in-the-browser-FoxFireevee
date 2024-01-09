@@ -35,8 +35,15 @@ function moduleProject2() {
       let square = document.createElement('div')
       square.classList.add('square')
       row.appendChild(square)
-      square.addEventListener('click', () => {
+      square.addEventListener('click', (event) => {
         // 👉 TASK 2 - Use a click handler to target a square 👈
+        if(!square.classList.contains('targeted')) {
+          document.querySelector('.targeted').classList.remove('targeted');
+          square.classList.add('targeted');
+        }
+        // event.target.classList.remove('targeted');
+        // console.log(event.target);
+        // event.currentTarget.classList.add('targeted');
       })
     }
   }
@@ -69,6 +76,7 @@ function moduleProject2() {
     // 👉 TASK 4 - Use the space bar to exterminate a mosquito 👈
 
     // 👉 TASK 5 - End the game 👈
+    console.log('I work! go keys!')
   })
   // 👆 WORK WORK ABOVE THIS LINE 👆
 }
